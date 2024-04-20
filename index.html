@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="registration.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration</h1>
+      <form action="./main.html" method="GET">
+        <label for="username">First Name</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" required />
+
+        <label for="mobile">Mobile Number:</label>
+        <input
+          type="tel"
+          id="mobile"
+          name="mobile"
+          pattern="[0-9]{10}"
+          minlength="10"
+          maxlength="10"
+          required
+        />
+
+        <label for="DOB">DOB</label>
+        <input type="text" id="DOB" name="DOB" required />
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required />
+        <a href="./main.html">
+         <button type="submit">Register</button>
+        </a>
+      </form>
+      
+    </div>
+  </body>
+</html>

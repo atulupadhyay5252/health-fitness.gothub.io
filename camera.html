@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Fitness Course - Camera</title>
+    <link rel="stylesheet" href="camera.css">
+</head>
+<body>
+    <a href="camera.html">Go to Camera Page</a>
+
+
+<h1>Welcome to our Health & Fitness Course!</h1>
+<p>Click the button below to open your camera.</p>
+
+<button onclick="openCamera()">Open Camera</button>
+<div class="container">
+    <video id="camera-feed" autoplay style="display: none;"></video>
+</div>
+
+
+<script>
+    async function openCamera() {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            const videoElement = document.getElementById("camera-feed");
+            videoElement.srcObject = stream;
+            videoElement.style.display = "block";
+        } catch (error) {
+            console.error("Error accessing camera:", error);
+            alert("Failed to access camera. Please make sure your camera is connected and permissions are granted.");
+        }
+    }
+</script>
+
+</body>
+</html>
